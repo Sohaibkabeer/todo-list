@@ -8,11 +8,14 @@ const TodoForm = ({addTodo}) => {
         addTodo(value);
         setValue("");
     }
+   const Capitalize = (str)=>{
+        return str.charAt(0).toUpperCase() + str.slice(1);
+        }
 
   return (
     <>
     <form className='TodoForm' onSubmit={handleSubmit}>
-<input type="text" className='todo-input' placeholder='What is the task?' value={value} onChange={(e) => {setValue(e.target.value)}}/>
+<input type="text" className='todo-input' placeholder='What is the task?' value={Capitalize(value)} onChange={(e) => {setValue(e.target.value)}}/>
 <button type='submit' className='todo-btn'>Add Task</button>
     </form>
     </>
